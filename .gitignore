@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local database / runtime data
+*.db
+backend/input/
+backend/outputs/
+
+# Model weights / large artifacts
+*.keras
+*.h5
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.bin
+
+# Frontend dependencies / builds
+node_modules/
+dist/
+build/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs / temporary files
+*.log
+*.tmp
