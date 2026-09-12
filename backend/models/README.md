@@ -1,12 +1,10 @@
-# Model files
+## Model
 
-The trained model weights are intentionally not committed to this GitHub repository
-because GitHub repositories have practical file-size limits.
+The trained Xception deepfake detection model is hosted on Kaggle.
 
-Place the trained model file in this directory before running inference.
+Model:
+[[TruthTrace Xception Deepfake Model]](https://www.kaggle.com/models/aniketgodiyal/truthtrace-xception-deepfake)
 
-Expected model file(s) removed from the public repository:
-- `backend/models/xception_deepfake_final.keras` (151.3 MB)
+Download the model and place it at:
 
-If the team wants to distribute the weights publicly, use a suitable model/file
-hosting service and update the download instructions here.
+backend/models/xception_deepfake_final.keras
