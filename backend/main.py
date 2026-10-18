@@ -44,16 +44,33 @@ IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
  
 app = FastAPI(title="VeriTrace API")
  
+import os
+
+FRONTEND_ORIGIN = os.getenv(
+    "FRONTEND_ORIGIN",
+    "http://localhost:5173"
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[
+        FRONTEND_ORIGIN,
+        "http://localhost:5173",
+        "http://localhost:3000",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Serve generated Grad-CAM images to React.
-app.mount("/media", StaticFiles(directory="input"), name="media")
- 
+INPUT_DIR = Path("input")
+INPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+app.mount(
+    "/media",
+    StaticFiles(directory=str(INPUT_DIR)),
+    name="media"
+) 
  
 @app.on_event("startup")
 def _startup():
