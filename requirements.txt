@@ -6,3 +6,4 @@ numpy
 tensorflow
 pillow
 ImageHash
+kagglehub
